@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const myfunction = () => {
+        let number = parseInt(document.getElementById("input1").value);
+        var str = "";
+
+        if (number <= 1 || isNaN(number)) {
+          number <= 1
+            ? (str = "Number should be greater then 1")
+            : (str = "...Invalid Input...");
+          document.getElementById("show").innerText = str;
+          return;
+        }
+
+        for (let i = 1; i <= number; i++) {
+          for (let j = 1; j <= i; j++) {
+            str += "*";
+          }
+          str += "\n";
+        }
+
+        document.getElementById("show").innerText = str;
+      };
+    </script>
+  </head>
+
+  <body>
+    <strong>Star Pattern</strong><br />
+    <input id="input1" type="text" />
+    <button onclick="myfunction()">Click me</button>
+    <pre id="show"></pre>
+  </body>
+</html>
